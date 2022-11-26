@@ -1,7 +1,8 @@
+import * as path from "path";
+import devtools from "solid-devtools/vite";
 import { defineConfig } from "vite";
 import solidPlugin from "vite-plugin-solid";
 import WindiCSS from "vite-plugin-windicss";
-import * as path from "path";
 
 export default defineConfig({
   resolve: {
@@ -9,7 +10,14 @@ export default defineConfig({
       "~": path.resolve(__dirname, "src"),
     },
   },
-  plugins: [solidPlugin(), WindiCSS()],
+  plugins: [
+    devtools({
+      name: true,
+      componentLocation: true,
+    }),
+    solidPlugin(),
+    WindiCSS(),
+  ],
   build: {
     target: "esnext",
     polyfillDynamicImport: false,
