@@ -78,7 +78,7 @@ function combineMeetingSlots(slots1: ISlots, slots2: ISlots): ISlots {
   return output;
 }
 
-function createSlotKey(slot: ISlot): string {
+export function createSlotKey(slot: ISlot): string {
   return `${slot[0]}_${slot[1]}`;
 }
 

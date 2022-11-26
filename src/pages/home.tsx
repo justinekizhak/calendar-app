@@ -1,3 +1,9 @@
+import DayView from "~/components/library/DayView";
+
 export default () => {
-  return <div>Home</div>;
+  return (
+    <div>
+      <DayView />
+    </div>
+  );
 };
